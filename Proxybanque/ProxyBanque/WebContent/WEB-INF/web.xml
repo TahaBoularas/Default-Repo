@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+         
+		<welcome-file-list>
+        	<welcome-file>home.html</welcome-file>
+        </welcome-file-list>
+   		 
+   		 
+   		 <servlet>
+        	<servlet-name>Controller0</servlet-name>
+        	<servlet-class>controller.deconnexion</servlet-class>
+        </servlet>
+        
+    	<servlet-mapping>
+        	<servlet-name>Controller0</servlet-name>
+        	<url-pattern>/deconnexion</url-pattern>
+    	</servlet-mapping>
+    	
+    	<servlet>
+        	<servlet-name>Controller1</servlet-name>
+        	<servlet-class>controller.authentification</servlet-class>
+        </servlet>
+        
+    	<servlet-mapping>
+        	<servlet-name>Controller1</servlet-name>
+        	<url-pattern>/gestion/authentification</url-pattern>
+    	</servlet-mapping>
+		<servlet>
+        	<servlet-name>Controller2</servlet-name>
+        	<servlet-class>controller.listeClients</servlet-class>
+        </servlet>
+        
+    	<servlet-mapping>
+        	<servlet-name>Controller2</servlet-name>
+        	<url-pattern>/gestion/listeClient</url-pattern>
+    	</servlet-mapping>
+    	
+    	<servlet>
+        	<servlet-name>Controller3</servlet-name>
+        	<servlet-class>controller.modificationInfoClient</servlet-class>
+        </servlet>
+        
+    	<servlet-mapping>
+        	<servlet-name>Controller3</servlet-name>
+        	<url-pattern>/gestion/modificationInfosClient</url-pattern>
+    	</servlet-mapping>
+    	
+    	<servlet>
+        	<servlet-name>Controller4</servlet-name>
+        	<servlet-class>controller.creationClient</servlet-class>
+        </servlet>
+        
+    	<servlet-mapping>
+        	<servlet-name>Controller4</servlet-name>
+        	<url-pattern>/gestion/creationClient</url-pattern>
+    	</servlet-mapping>
+    	
+    	<servlet>
+        	<servlet-name>Controller5</servlet-name>
+        	<servlet-class>controller.suppressionClient</servlet-class>
+        </servlet>
+        
+    	<servlet-mapping>
+        	<servlet-name>Controller5</servlet-name>
+        	<url-pattern>/gestion/suppressionClient</url-pattern>
+    	</servlet-mapping>
+    	
+    	<security-constraint>
+				<display-name>Sécurité PBSI</display-name>
+					<web-resource-collection>
+						<web-resource-name>Ressource protégée</web-resource-name>
+						<url-pattern>/gestion/*</url-pattern>
+						<http-method>GET</http-method>
+						<http-method>POST</http-method>
+					</web-resource-collection>
+					<auth-constraint>
+					<role-name>gerant</role-name>
+					<role-name>conseiller</role-name>
+				</auth-constraint>
+			</security-constraint>
+		
+		
+		
+
+				
+			
+			
+		
+		<security-role>
+			<description>gerant</description>
+			<role-name>gerant</role-name>
+		</security-role>
+		<security-role>
+			<description>conseiller</description>
+			<role-name>conseiller</role-name>
+		</security-role>
+		
+		<login-config>
+			 <auth-method>FORM</auth-method>
+			<form-login-config>
+				<form-login-page>/login.jsp</form-login-page>
+				<form-error-page>/error.jsp</form-error-page>
+			</form-login-config> 
+			 
+		</login-config>
+   		 
+   		  <jsp-config>
+        	<jsp-property-group>
+            	<url-pattern>*.jsp</url-pattern>
+            	<include-prelude>/WEB-INF/tagLib.jsp</include-prelude>
+        	</jsp-property-group>
+    		</jsp-config>
+    		
+    		
+				
+    	
+</web-app>

@@ -1,0 +1,314 @@
+/*Page LISTE CLIENTS*/
+
+/*Formatage*/
+body, *, ::before, ::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/*Background*/
+body
+{
+	background-image:url(../img/bg3.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family: Helvetica, Arial, sans-sherif;
+	font-size: 1.2rem;
+}
+
+/*Position de la page en entier*/
+header 
+{
+	grid-area: hd;
+}
+footer
+{
+	grid-area: ft;
+	margin-top: 1%;
+	padding: 49px;
+}
+
+main 
+{
+	grid-area: main;
+	margin-top: 2%;
+}
+aside 
+{
+	grid-area: sd;
+}
+
+.contenant
+{
+	height: 100vh;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(9, 1fr);
+	grid-template-rows: 25% 1fr 20%;
+	grid-template-areas: 
+							"hd hd . . . . . sd sd"
+							". main main main main main main main ."
+							". . ft ft ft ft ft . .";
+}
+
+/* Menu avec mise en forme*/
+header
+{
+	position: absolute;
+	margin: 3% 5%;
+}
+
+.conbtn 
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #7794A6;
+}
+
+ul 
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li 
+{
+    float: left;
+    border-right:1px solid #364C59;
+}
+
+li:last-child 
+{
+    border-right: none;
+}
+
+li a 
+{
+    display: block;
+    color: #364C59;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) 
+{
+    background-color: #8AB0BF;
+}
+
+.active 
+{
+    background-color: #4CAF50;
+}
+
+
+/*Encadrer en haut à droite*/
+.topRight
+{
+	position: absolute;
+	right: 2%;
+	top: 3%;
+
+/*Glass effect*/
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 1;
+	background: white;
+	min-height: 15vh;
+	width: 20%;
+	background: linear-gradient(to right bottom, 
+		rgba(255,255,255,0.5), 
+		rgba(255,255,255,0.1));
+	border-radius: 2rem;
+}
+
+/*Encadrer milieu*/
+.middle
+{
+	position: relative;
+	top: 0;
+	left: -45px;
+	padding: 0;
+/*Glass effect*/
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 1;
+	background: white;
+	min-height: 50vh;
+	width: 110%;
+	background: linear-gradient(to right bottom, 
+		rgba(255,255,255,0.5), 
+		rgba(255,255,255,0.1));
+	border-radius: 2rem;
+}
+
+
+/*Table position and effects*/
+table.greyGridTableList {
+  border: 2px solid #F2A88D;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  margin: 5% 3%;
+  padding: 50px;
+  table-layout: fixed;
+
+}
+table.greyGridTableList td, table.greyGridTableList th {
+  border: 1px solid #F29F8D;
+  padding: 5px 1px;
+}
+table.greyGridTableList tbody td {
+  font-size: 15px;
+}
+table.greyGridTableList td:nth-child(even) {
+  background: #8AB0BF;
+}
+table.greyGridTableList thead {
+  background: #F29F8D;
+  border-bottom: 2px solid #F2A88D;
+}
+table.greyGridTableList thead th {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  border-left: 2px solid #F2A88D;
+  height: 3rem;
+}
+table.greyGridTableList thead th:first-child {
+  border-left: none;
+}
+
+/*Table on modifClients page*/
+table.greyGridTable {
+  border: 2px solid #F2A88D;
+  width: 90%;
+  text-align: center;
+  border-collapse: collapse;
+  margin: 5%;
+
+  table-layout: fixed;
+}
+table.greyGridTable td, table.greyGridTable th {
+  border: 1px solid #F29F8D;
+  padding: 5px 1px;
+}
+table.greyGridTable tbody td {
+  font-size: 15px;
+}
+table.greyGridTable td:nth-child(even) {
+  background: #8AB0BF;
+}
+table.greyGridTable thead {
+  background: #F29F8D;
+  border-bottom: 2px solid #F2A88D;
+}
+table.greyGridTable thead th {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  border-left: 2px solid #F2A88D;
+  height: 3rem;
+}
+table.greyGridTable thead th:first-child {
+  border-left: none;
+}
+
+/*Radio button*/
+input[type="radio"].control {
+  display: none;
+}
+input[type="radio"].control + label {
+  position: relative;
+  padding-left: 4.3rem;
+  left: 1.7rem;
+}
+input[type="radio"].control + label::before,
+input[type="radio"].control + label::after {
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  content:'';
+  border-radius: 1rem;
+}
+input[type="radio"].control + label::before {
+  bottom: 0;
+  left: 0;
+  border: 3px solid #7794A6;
+  background-color: transparent;
+  width: 1rem;
+  height: 1rem; 
+}
+input[type="radio"].control + label::after {
+  bottom: 3px;
+  left: 3px;
+  width: calc(1rem - 6px);
+  height: calc(1rem - 6px);
+}
+input[type="radio"].control:checked + label::after {
+  background-color: #F29F8D;
+}
+
+/*Connection button*/
+.btn
+{
+	z-index: 4;
+	display: block;
+	
+	text-align: center;
+	text-decoration: none; 
+    border: 0;
+    line-height: 2.5;
+    padding: 3px 15px;
+    font-size: 1.1rem;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #7794A6;
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.btn:hover 
+{
+    background-color: #F29F8D;
+}
+
+.btn:active 
+{
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+/*Centrage Bouton Modif Clients Page*/
+.centreBtn{
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: -5%;
+	padding-bottom: 2%;
+	padding-top: 2%;
+}
+
+.centreBtnList{
+	display: table;
+	margin: 0 auto;
+	margin-top: 0;
+	padding-bottom: 2%;
+	padding-top: 2%;
+	background-color: transparent;
+}

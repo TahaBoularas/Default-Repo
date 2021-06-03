@@ -1,0 +1,201 @@
+/*Page HOME*/
+
+/*Formatage*/
+*, ::before, ::after 
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*Background and position*/
+body
+{
+    z-index: -3;
+	position: relative;
+	min-height: 100vh;
+	background-image:url(bg1.jpg);
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+	font-family: Helvetica, Arial, sans-sherif;
+	font-size: 1.2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*Footer "version and names"*/
+footer
+{
+	position: absolute;
+	top: 3%;
+	right: 1.5%;
+	color: #8AB0BF;
+	font-size: 1rem;
+}
+
+
+/*Logo position*/
+header{
+    position: relative;
+}
+.logo
+{
+    position: absolute;
+    z-index: -2;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 1;
+    min-height: 45vh;
+    padding-top: 0%;
+    padding-left: 0%
+}
+
+/*Glass effect*/
+.glass
+{
+    position: absolute;
+    z-index: 3;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 1;
+	background: white;
+	min-height: 70vh;
+	width: 60%;
+	background: linear-gradient(to right bottom, 
+		rgba(255,255,255,0.5), 
+		rgba(255,255,255,0.1));
+	border-radius: 2rem;
+}
+
+/*Page du FORMULAIRE*/
+
+/* Menu avec mise en forme*/
+
+header
+{
+	position: absolute; top:6%; left: 3%; /*Position of the menu*/
+}
+
+ul 
+{
+    list-style-type: none;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #7794A6;
+}
+
+li 
+{
+    float: left;
+    border-right:1px solid #364C59;
+}
+
+li:last-child 
+{
+    border-right: none;
+}
+
+li a 
+{
+    display: block;
+    color: #364C59;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) 
+{
+    background-color: #8AB0BF;
+}
+
+.active 
+{
+    background-color: #4CAF50;
+}
+
+/*Mise en page du formulaire*/
+form
+{
+	margin: 0 auto;
+	width: 0;
+	opacity: 0.7;
+
+}
+
+#ident
+{
+	width: 97%;
+    line-height: 1.2;
+    padding: 5px 3px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#ident:focus
+{
+	background-color: lightcyan;
+}
+
+/*Formular botton*/
+.form
+{
+	width: 40%;
+	text-decoration:none; 
+    border: 0;
+    line-height: 2.5;
+    padding: 50px 50px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: #364C59;
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+#bout
+{
+	width: 100%;
+	text-decoration:none; 
+    border: 0;
+    line-height: 1.5;
+    padding: 5px 3px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: #7794A6;
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+#bout:hover 
+{
+    background-color: #F29F8D;
+}
+
+#bout:active 
+{
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}

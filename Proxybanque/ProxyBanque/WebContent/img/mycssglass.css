@@ -1,0 +1,133 @@
+/*Page HOME*/
+
+/*Formatage*/
+*, ::before, ::after 
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*Background and position*/
+body
+{
+	background-image:url(bg1.jpg);
+	background-attachment:fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+}
+main
+{
+	position: relative;
+	min-height: 100vh;
+	font-family: Helvetica, Arial, sans-sherif;
+	font-size: 1.2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*Logo position*/
+
+.logo
+{
+	position: absolute;
+    z-index: 2;
+    display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 1;
+	min-height: 45vh;
+	
+}
+
+/*Glass effect*/
+.glass
+{
+	z-index: 3;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 1;
+	background: white;
+	min-height: 70vh;
+	width: 60%;
+	background: linear-gradient(to right bottom, 
+		rgba(255,255,255,0.5), 
+		rgba(255,255,255,0.1));
+	border-radius: 2rem;
+}
+
+/*Position of the connection button*/
+.bouton
+{
+    display: table;
+	margin: 0 auto;
+}
+
+/*Connection button*/
+.btn
+{
+	z-index: 4;
+	text-align: center;
+	text-decoration: none; 
+    border: 0;
+    line-height: 2.5;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: #7794A6;
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.btn:hover 
+{
+    background-color: #F29F8D;
+}
+
+.btn:active 
+{
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+/*Ligne de séparation*/
+hr
+{
+	min-width: 95%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+    border: 0;
+    height: 1px; /* Firefox... */
+    box-shadow: 0 0 10px 5px #8AB0BF;
+}
+hr:after
+{  /* Not really supposed to work, but does */
+    content: "\00a0";  /* Prevent margin collapse */
+}
+
+/*Footer "version and names"*/
+footer
+{
+	position: absolute;
+	top: 3%;
+	right: 1.5%;
+	color: #8AB0BF;
+}
+/*Titre H1*/
+h1
+{
+	    background-image: linear-gradient(322deg, #F29F8D, transparent);
+    	color: snow;
+}
